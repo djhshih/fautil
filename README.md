@@ -9,7 +9,7 @@ conditions of use.
 
 # Installation
 
-Prerequisite: `libz` libraries and headers.
+Prerequisite: `zlib` libraries and headers.
 
 With `gcc >= 4.4`, you can simply
 
