@@ -64,10 +64,17 @@ intExp.o \
 portimpl.o \
 cheapcgi.o \
 
+# Avoid linking these objects, since they bring more baggage
 #mime.o \
 #oswin9x.o \
 
-
+# linefile depends on a few functions
+# Link all objects s.t. the entire htslib available.
+# End user cannot use both libfautil.a and libhts.a regardless
+# of whether some objects or all objects are linked,
+# due to lack of namespaces.
+# A better solution would probably be to incorporate and rename
+# all functions on which linefile directly or indirectly depends.
 LIBHTS_OBJS = \
 ../htslib/kfunc.o \
 ../htslib/knetfile.o \
