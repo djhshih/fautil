@@ -1,8 +1,7 @@
 CC=gcc
 # to build on sundance: CC=gcc -mcpu=v9 -m64
-COPTS=
-#COPT?=-O g
-CFLAGS=-O2 -Os -fdata-sections -ffunction-sections -Wl,--gc-sections
+COPTS=-O2 -Os -fdata-sections -ffunction-sections -Wl,--gc-sections
+CFLAGS?=
 
 ifeq (${MACHTYPE},)
     MACHTYPE:=$(shell uname -m)
@@ -63,7 +62,7 @@ endif
 
 # this is to hack around many make files not including HG_WARN in
 # the link line
-CFLAGS += ${HG_WARN}
+COPT += ${HG_WARN}
 
 SCRIPTS?=/bin
 BINDIR?=/bin

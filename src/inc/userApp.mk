@@ -23,7 +23,6 @@ ifeq ($(findstring src/hg/,${CURDIR}),src/hg/)
 endif
 
 L += -L${kentSrc}/lib/${MACHTYPE} -lfautil
-#COPT += -Os -fdata-sections -ffunction-sections -Wl,--gc-sections
 
 LINKLIBS = ${DEPLIBS} ${MYSQLLIBS}
 
